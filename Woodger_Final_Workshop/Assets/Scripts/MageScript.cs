@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkeletonScript : MonoBehaviour
+public class MageScript : MonoBehaviour
 {
-    public GameObject bonePrefab;
+    public GameObject lightningPrefab;
     public GameObject player;
     public int hp = 2;
     public bool pew;
@@ -30,9 +30,12 @@ public class SkeletonScript : MonoBehaviour
     void Update()
     {
         Vector3 diff = player.transform.position - transform.position;
+
         float angle = Mathf.Atan2(diff.y, diff.x);
+
         transform.rotation = Quaternion.Euler(0f, 0f, angle * Mathf.Rad2Deg - 90);
-        transform.Translate(Vector3.up * Time.deltaTime * 1.5f);
+
+        transform.Translate(Vector3.right * Time.deltaTime * 3);
 
         if (!pew)
         {
@@ -43,7 +46,7 @@ public class SkeletonScript : MonoBehaviour
 
     IEnumerator Blam()
     {
-        Instantiate(bonePrefab, transform.position, transform.rotation);
+        Instantiate(lightningPrefab, transform.position, transform.rotation);
         yield return new WaitForSeconds(4f);
         pew = false;
     }

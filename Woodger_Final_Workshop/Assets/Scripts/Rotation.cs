@@ -9,6 +9,8 @@ public class Rotation : MonoBehaviour
     private bool pressedS;
     private bool pressedW;
 
+    public GameObject attackBox;
+
     // Start is called before the first frame update
     void Start()
     {

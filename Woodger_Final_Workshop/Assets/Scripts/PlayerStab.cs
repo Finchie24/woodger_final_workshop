@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class PlayerStab : MonoBehaviour
 {
-    public GameObject Sword;
     public bool hasSwung;
+    public GameObject attackBox;
+
+    Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
-        Sword.SetActive(false);
+        attackBox.SetActive(false);
         hasSwung = false;
+
+        anim = attackBox.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -26,9 +30,11 @@ public class PlayerStab : MonoBehaviour
 
     IEnumerator SwingTimer()
     {
-        Sword.SetActive(true);
+        attackBox.SetActive(true);
+        anim.SetBool("swung", true);
         yield return new WaitForSeconds(0.5f);
-        Sword.SetActive(false);
+        attackBox.SetActive(false);
+        anim.SetBool("swung", false);
         yield return new WaitForSeconds(0.7f);
         hasSwung = false;
     }
