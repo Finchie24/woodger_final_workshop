@@ -4,60 +4,32 @@ using UnityEngine;
 
 public class Rotation : MonoBehaviour
 {
-    private bool pressedA;
+    /*private bool pressedA;
     private bool pressedD;
     private bool pressedS;
-    private bool pressedW;
+    private bool pressedW;*/
 
     public GameObject attackBox;
+    public new Transform transform;
+    public Camera cam;
+    Vector3 mousePos;
 
     // Start is called before the first frame update
     void Start()
     {
-        pressedA = false;
+        /*pressedA = false;
         pressedD = false;
         pressedS = false;
-        pressedW = false;
+        pressedW = false;*/
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!pressedA && (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)))
-        {
-            transform.rotation = new Quaternion(0, 0, 0, 0);
-            transform.Rotate(0, 0, 90);
-            pressedA = true;
-            pressedD = false;
-            pressedS = false;
-            pressedW = false;
-        }
-        if (!pressedD && (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)))
-        {
-            transform.rotation = new Quaternion(0, 0, 0, 0);
-            transform.Rotate(0, 0, 270);
-            pressedA = false;
-            pressedD = true;
-            pressedS = false;
-            pressedW = false;
-        }
-        if (!pressedS && (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)))
-        {
-            transform.rotation = new Quaternion(0, 0, 0, 0);
-            transform.Rotate(0, 0, 180);
-            pressedA = false;
-            pressedD = false;
-            pressedS = true;
-            pressedW = false;
-        }
-        if (!pressedW && (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)))
-        {
-            transform.rotation = new Quaternion(0, 0, 0, 0);
-            transform.Rotate(0, 0, 00);
-            pressedA = false;
-            pressedD = false;
-            pressedS = false;
-            pressedW = true;
-        }
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        Vector3 lookDir = mousePos - transform.position;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        transform.rotation = Quaternion.Euler(0f, 0f, angle);
     }
 }

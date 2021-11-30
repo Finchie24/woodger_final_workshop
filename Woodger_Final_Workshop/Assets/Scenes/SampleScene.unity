@@ -949,6 +949,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackBox: {fileID: 454339316}
+  transform: {fileID: 1910363146}
+  cam: {fileID: 963194227}
 --- !u!1 &1977515173
 GameObject:
   m_ObjectHideFlags: 0
