@@ -75,8 +75,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 147b4e2e0e36b6e40b2d1949d93972af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  daggerPrefab: {fileID: 2414782393950081522, guid: bb9d2f2548ec8674eb29ddad27b554f4, type: 3}
   player: {fileID: 0}
-  hp: 2
+  hp: 1
+  pew: 0
 --- !u!1 &5354964455541929261
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,8 +24,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4647019252945133315}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.82, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.21643952, w: 0.97629607}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 4647019253154254284}
@@ -127,8 +127,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.9755154, y: 3.252086, z: 5.6824327}
-  m_Center: {x: -9.403451, y: -0.65191996, z: -0.15264153}
+  m_Size: {x: 3.0691419, y: 2.8775768, z: 5.6824327}
+  m_Center: {x: 0, y: -0.65539265, z: 0}
 --- !u!54 &4647019253154254275
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -157,5 +157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7bacf8e054fdef4c8cc858157f372c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  brainPrefab: {fileID: 6300899281420331785, guid: 4f3096028bf674f46aab8f14d6c8da8a, type: 3}
   player: {fileID: 0}
   hp: 3
+  pew: 0
+  sprite: {fileID: 4647019252945133325}

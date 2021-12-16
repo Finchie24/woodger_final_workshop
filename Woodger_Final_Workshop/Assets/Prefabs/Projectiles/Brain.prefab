@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 6300899281420331791}
   - component: {fileID: 6300899281420331784}
   - component: {fileID: 1202110671289900900}
+  - component: {fileID: 4772739096993677989}
   m_Layer: 0
   m_Name: Brain
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,4 +96,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 936c551cf85b0af43979f5b3d9897cc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+--- !u!65 &4772739096993677989
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6300899281420331785}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.33809948, y: 0.30746588, z: 1.5967791}
+  m_Center: {x: -0.0021881263, y: -0.008752465, z: 0.097267866}

@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3015017168080634349}
   - component: {fileID: -2091133744151602107}
+  - component: {fileID: 8872130474604947664}
   m_Layer: 0
   m_Name: Dagger
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,7 +45,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 936c551cf85b0af43979f5b3d9897cc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+--- !u!65 &8872130474604947664
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2414782393950081522}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.44591662, y: 1.7473683, z: 1}
+  m_Center: {x: -0.01932846, y: 0.032214165, z: 0}
 --- !u!1 &8165582141544794328
 GameObject:
   m_ObjectHideFlags: 0

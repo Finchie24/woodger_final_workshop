@@ -9,6 +9,9 @@ public class GoblinScript : MonoBehaviour
     public int hp = 1;
     public bool pew;
 
+    private float xRange = 28;
+    private float yRange = 15;
+
     private void Start()
     {
         pew = false;
@@ -42,10 +45,28 @@ public class GoblinScript : MonoBehaviour
             pew = true;
             StartCoroutine(Blam());
         }
+
+        if (transform.position.x < -xRange)
+        {
+            transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
+        }
+        if (transform.position.x > xRange)
+        {
+            transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
+        }
+        if (transform.position.y < -yRange)
+        {
+            transform.position = new Vector3(transform.position.x, -yRange, transform.position.z);
+        }
+        if (transform.position.y > yRange)
+        {
+            transform.position = new Vector3(transform.position.x, yRange, transform.position.z);
+        }
     }
 
     IEnumerator Blam()
     {
+        yield return new WaitForSeconds(0.2f);
         Instantiate(daggerPrefab, transform.position, transform.rotation);
         yield return new WaitForSeconds(4f);
         pew = false;

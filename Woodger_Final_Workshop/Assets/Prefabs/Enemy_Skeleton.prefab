@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bonePrefab: {fileID: 8529637084333467262, guid: 6a7a05d432a829843867820f9b14eb64, type: 3}
-  player: {fileID: 0}
+  player: {fileID: 4567288929499761519, guid: bf5196f6543fac04baa82fbfb5cc178d, type: 3}
   hp: 2
   pew: 0
+  sprite: {fileID: 487027335185488230}

@@ -157,5 +157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6bc645744586ad4faa85005a68f8848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lightningPrefab: {fileID: 1536718285829465074, guid: a8186bafcf34c0a4aace24c4ccbd1362, type: 3}
   player: {fileID: 0}
   hp: 2
+  pew: 0
+  sprite: {fileID: 1354560055}

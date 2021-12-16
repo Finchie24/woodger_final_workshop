@@ -9,6 +9,11 @@ public class MageScript : MonoBehaviour
     public int hp = 2;
     public bool pew;
 
+    private float xRange = 28;
+    private float yRange = 15;
+
+    public SpriteRenderer sprite;
+
     private void Start()
     {
         pew = false;
@@ -19,6 +24,7 @@ public class MageScript : MonoBehaviour
         if (other.gameObject.CompareTag("Hurts"))
         {
             hp -= 1;
+            StartCoroutine(Hit());
         }
         if (hp == 0)
         {
@@ -42,12 +48,37 @@ public class MageScript : MonoBehaviour
             pew = true;
             StartCoroutine(Blam());
         }
+
+        if (transform.position.x < -xRange)
+        {
+            transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
+        }
+        if (transform.position.x > xRange)
+        {
+            transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
+        }
+        if (transform.position.y < -yRange)
+        {
+            transform.position = new Vector3(transform.position.x, -yRange, transform.position.z);
+        }
+        if (transform.position.y > yRange)
+        {
+            transform.position = new Vector3(transform.position.x, yRange, transform.position.z);
+        }
     }
 
     IEnumerator Blam()
     {
+        yield return new WaitForSeconds(0.5f);
         Instantiate(lightningPrefab, transform.position, transform.rotation);
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3.7f);
         pew = false;
+    }
+
+    IEnumerator Hit()
+    {
+        sprite.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        sprite.color = Color.white;
     }
 }

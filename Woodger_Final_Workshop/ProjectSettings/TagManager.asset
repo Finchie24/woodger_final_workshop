@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Hurts
   - Door
+  - Projectile
+  - Health
+  - Music
   layers:
   - Default
   - TransparentFX

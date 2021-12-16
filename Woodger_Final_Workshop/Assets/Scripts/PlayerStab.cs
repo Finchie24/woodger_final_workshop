@@ -21,7 +21,7 @@ public class PlayerStab : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !hasSwung)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !hasSwung)
         {
             StartCoroutine(SwingTimer());
             hasSwung = true;
@@ -32,10 +32,10 @@ public class PlayerStab : MonoBehaviour
     {
         attackBox.SetActive(true);
         anim.SetBool("swung", true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
         attackBox.SetActive(false);
         anim.SetBool("swung", false);
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(0.25f);
         hasSwung = false;
     }
 }

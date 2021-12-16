@@ -13,6 +13,7 @@ public class Rotation : MonoBehaviour
     public new Transform transform;
     public Camera cam;
     Vector3 mousePos;
+    Vector3 screenDepthPos;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,11 @@ public class Rotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        screenDepthPos = Input.mousePosition;
+        screenDepthPos.z = 30f;
+        mousePos = cam.ScreenToWorldPoint(screenDepthPos);
+
+        //mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
         Vector3 lookDir = mousePos - transform.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
